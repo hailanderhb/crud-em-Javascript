@@ -1,6 +1,6 @@
 var linhaSelecionada = null;
 
-function enviarOn(){
+function enviarOn(){ //Função para o evento click no form (enviar)
     var dadosFormulario = lerDados();
     if(linhaSelecionada == null){
         inserirNovosDados(dadosFormulario);
@@ -11,7 +11,7 @@ function enviarOn(){
     resetarForm();
 }
 
-function lerDados(){
+function lerDados(){ //função para o valor nos dados do formulário ser pego nos respectivos itens
     var dadosFormulario = {};
     dadosFormulario["nomeCompleto"] = document.getElementById("nomeCompleto").value;
     dadosFormulario["profissao"] = document.getElementById("profissao").value;
@@ -20,7 +20,7 @@ function lerDados(){
     return dadosFormulario;
 }
 
-function inserirNovosDados(data){
+function inserirNovosDados(data){ //função para incrementar a linha o valor descrito no form das respectivas colunas.
     var table = document.getElementById("listaEmpregados").getElementsByTagName('tbody')[0];
     var novaLinha = table.insertRow(table.length);
     cell1 = novaLinha.insertCell(0);
@@ -37,7 +37,7 @@ function inserirNovosDados(data){
 
 }
 
-function resetarForm(){
+function resetarForm(){//Limpar formulario após enviar
     document.getElementById("nomeCompleto").value = "";
     document.getElementById("profissao").value = "";
     document.getElementById("salario").value = "";
@@ -45,7 +45,7 @@ function resetarForm(){
     linhaSelecionada = null;
 }
 
-function editar(td){
+function editar(td){//Editar o dado já inserido -> colocar de volta no form
     linhaSelecionada = td.parentElement.parentElement;
     document.getElementById("nomeCompleto").value = linhaSelecionada.cells[0].innerHTML;
     document.getElementById("profissao").value = linhaSelecionada.cells[1].innerHTML;
@@ -54,7 +54,7 @@ function editar(td){
 
 }
 
-function atualizarDados(dadosFormulario){
+function atualizarDados(dadosFormulario){//Após atualiado ele retorna para a propriedade em questão.
     linhaSelecionada.cells[0].innerHTML = dadosFormulario.nomeCompleto;
     linhaSelecionada.cells[1].innerHTML = dadosFormulario.profissao;
     linhaSelecionada.cells[2].innerHTML = dadosFormulario.salario;
@@ -62,7 +62,7 @@ function atualizarDados(dadosFormulario){
 
 }
 
-function deletar(td){
+function deletar(td){//alert para confirmar a exclusão dos dados
     if(confirm("Tem certeza que quer deletar esses dados?")){
         linha = td.parentElement.parentElement;
         document.getElementById("listaEmpregados").deleteRow(linha.rowIndex);

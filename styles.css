@@ -8,13 +8,19 @@ body{
     padding: 10px;
 }
 
+.total{
+    margin-top: 10px;
+}
 
 .formulario{
+    margin-top: 10px;
+    width: 40%;
     padding-right: 10px;
     padding-left: 10px;
     background-color: rgb(98, 147, 202);
     color: white;
     border: black solid 1px;
+    text-align: center;
 
 }
 
@@ -27,5 +33,4 @@ body{
 
 .list th{
     padding-right: 155px;
-
 }
