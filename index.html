@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud - Javascript puro no Html</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar text-white bg-danger d-flex justify-content-center">
+        <h4>CRUD com Javascript puro no html - Layout (bootstrap)</h4>
+    </nav>
+    
+    <table class="total">
+        <tr>
+            <td>
+             <!-- Form for crud operations-->
+             <form class="formulario" onsubmit="event.preventDefault(); enviarOn();" autocomplete="off">
+                <div>
+                  <label>Nome Completo:</label>
+                  <small class="form-text text-muted">Por favor preencher o nome completo</small>
+                  <input type="text" class="form-control" name="nomeCompleto" id="nomeCompleto">
+                </div>
+                <div>
+                    <label>Profissão:</label>
+                    <input type="text" class="form-control" name="profissao" id="profissao">
+                </div>
+                <div>
+                    <label>Salário:</label>
+                    <input type="text" class="form-control" name="salario" id="salario">
+
+                </div>
+                <div>
+                    <label>Cidade:</label>
+                    <input type="text" class="form-control" name="cidade" id="cidade">
+
+                </div>
+                <div class="form-action-buttons" id="enviar">
+                    <input class="btn btn-danger" type="submit" value="Enviar">
+                </div>
+              </form>
+            </td>
+            <td>
+                <!-- Tabela para listar tudo-->
+                <table class="list" id="listaEmpregados">
+                    <thead>
+                        <tr>
+                            <th>Nome completo:</th>
+                            <th>Profissão:</th>
+                            <th>Salário:</th>
+                            <th>Cidade:</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
